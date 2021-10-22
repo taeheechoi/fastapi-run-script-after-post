@@ -5,15 +5,7 @@
     (venv) $ uvicorn app:app --reload
 ```
 
-### Note
-Must run "uvicorn app:app" on console to run a script
 
-Running uvicorn in __main__ will fail to run a script
-
-```
-        if __name__ == '__main__':
-            uvicorn.run(app)
- ```
 
 ### References
 - https://realpython.com/api-integration-in-python/
