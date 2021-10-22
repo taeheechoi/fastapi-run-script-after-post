@@ -25,7 +25,7 @@ class Job(DateTimeModeMixin):
 
 jobs = []
 
-def run_script():
+def job_email_with_attachment():
     to_email = os.getenv("TO_EMAIL").split(';')
     attachments = glob('data/*.csv')
     email_with_attachment(header='header...', recipient=to_email, body='body...', attachments=attachments)
@@ -35,9 +35,9 @@ async def get_jobs():
     return jobs
 
 @app.post('/jobs', status_code=201)
-async def add_log(job: Job):
+async def add_job(job: Job):
     jobs.append(job)
-    run_script()
+    job_email_with_attachment()
     return jobs
 
 if __name__ == '__main__':
