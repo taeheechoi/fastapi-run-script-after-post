@@ -1,0 +1,8 @@
+POST http://127.0.0.1:8000/logs
+content-type: application/json
+
+{
+    "name": "Task1",
+    "description": "Send an email using post"
+    
+}
